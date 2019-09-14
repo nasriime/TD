@@ -1,2 +1,11 @@
-@import "../node_modules/bootstrap/dist/css/bootstrap.css"
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
+ @font-face {
+      font-family: AVANTGA2;
+      src: url('assets/fonts/ITCAvantGardePro-Md.ttf');
+    }
+
+    * {
+      font-family: AVANTGA2 !important;
+    //   font-size: 14px;
+    }

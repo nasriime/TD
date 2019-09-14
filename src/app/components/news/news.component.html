@@ -1,18 +1,22 @@
-<div *ngIf="news" class="container wrapper">
-    <div class="row cards__wrapper">
-        <div *ngFor="let item of news|slice:0:limit; let i=index" [ngClass]="getClass(i)">
-            <div class="card__background" [ngStyle]="{'background-image':'url('+ item.enclosure.link +')'}">
-                <div class="card__overlay">
-                    <div class="card__info">
-                        <p>{{ item.title }}</p>
-                        <p>{{ formatDate(item.pubDate) }}</p>
+<div class="container wrapper">
+    <h2>CNN.com - RSS Channel - App International Edition</h2>
+    <div *ngIf="news">
+        <div class="row cards__wrapper">
+            <div *ngFor="let item of news|slice:0:limit; let i=index" [ngClass]="getClass(i)">
+                <div class="card__background">
+                    <img [src]="item.enclosure.link" alt="">
+                    <div class="card__overlay">
+                        <div class="card__info">
+                            <p>{{ item.title }}</p>
+                            <p>{{ formatDate(item.pubDate) }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="btn__wrapper text-center">
-        <button *ngIf="news.length > limit && limit != news.length" (click)="loadMore(target)">View more</button>
+        <div class="btn__wrapper text-center">
+            <button *ngIf="news.length > limit && limit != news.length" (click)="loadMore(target)">View more</button>
+        </div>
     </div>
     <div class="target"><div #target></div></div>
 </div>
