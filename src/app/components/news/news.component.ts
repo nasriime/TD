@@ -57,9 +57,9 @@ export class NewsComponent implements OnInit {
    */
   getClass(i) { 
     if(i%10 == 0 || i%10 == 6){
-      return 'col-md-8';
+      return 'col-lg-8 col-md-6';
     }
-    return 'col-md-4';
+    return 'col-lg-4 col-md-6';
   }
 
 }

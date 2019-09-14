@@ -1,0 +1,3 @@
+- For minification and optimization: use (ng serve --prod) or for build (ng build --prod)
+- I saw that there is no need for jquery in this demo.
+- I added simple transform animation to cards.

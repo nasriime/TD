@@ -1,5 +1,10 @@
 .wrapper{
     margin-top: 40px;
+    h4{
+        padding-left: 30px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
 }
 
 .cards__wrapper{
@@ -8,12 +13,9 @@
 }
 
 .card__background{
-    margin: 10px 0;
+    margin: 5px 0;
     position: relative;
     height: 200px;
-    // background-position: center; 
-    // background-repeat: no-repeat;
-    // background-size: cover;
     overflow:hidden;
     &:hover{
         cursor:pointer;
@@ -36,7 +38,8 @@
     left:0;
     right:0;
     color:#fff;
-    background-color:rgba(0, 0, 0, 0.3);
+    // background-color:rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to top,#000,transparent 100%);
     overflow:hidden;
 }
 
