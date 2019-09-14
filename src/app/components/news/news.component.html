@@ -1,9 +1,13 @@
-<div *ngFor="let new of news">
-    <div>
-        <p>{{ new.title }}</p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+<div *ngIf="news" class="container">
+    <div *ngFor="let new of news|slice:0:limit; let i=index">
+        <div [ngClass]="getClass(i)">
+            <p>{{ new.title }}</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
     </div>
+    
+    <button *ngIf="news.length > limit && limit != news.length" (click)="loadMore()">View more</button>
 </div>
