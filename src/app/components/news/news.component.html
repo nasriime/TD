@@ -1,13 +1,18 @@
-<div *ngIf="news" class="container">
-    <div *ngFor="let new of news|slice:0:limit; let i=index">
-        <div [ngClass]="getClass(i)">
-            <p>{{ new.title }}</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+<div *ngIf="news" class="container wrapper">
+    <div class="row cards__wrapper">
+        <div *ngFor="let item of news|slice:0:limit; let i=index" [ngClass]="getClass(i)">
+            <div class="card__background" [ngStyle]="{'background-image':'url('+ item.enclosure.link +')'}">
+                <div class="card__overlay">
+                    <div class="card__info">
+                        <p>{{ item.title }}</p>
+                        <p>{{ formatDate(item.pubDate) }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <button *ngIf="news.length > limit && limit != news.length" (click)="loadMore()">View more</button>
+    <div class="btn__wrapper text-center">
+        <button *ngIf="news.length > limit && limit != news.length" (click)="loadMore(target)">View more</button>
+    </div>
+    <div class="target"><div #target></div></div>
 </div>

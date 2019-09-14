@@ -1,0 +1,60 @@
+.wrapper{
+    margin-top: 40px;
+}
+
+.cards__wrapper{
+    margin: 30px 0;
+    padding: 20px 0;
+}
+
+.card__background{
+    margin: 10px 0;
+    position: relative;
+    height: 200px;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow:hidden;
+}
+
+.card__overlay{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    color:#fff;
+    background-color:rgba(0, 0, 0, 0.2);
+    overflow:hidden;
+}
+
+.card__info{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    overflow:hidden;
+    padding: 10px;
+    p{
+        width:100%;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-bottom: 0;
+   }
+}
+
+.btn__wrapper{
+    button{
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #000;
+    }
+}
+
+.target{
+    margin-top: 80px;
+    div{
+        height: 1px;
+    }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { NewsService } from "../../services/news.service";
 import { INews } from './interfaces/news.interface';
 import { INewsRespone } from './interfaces/newsResponse.interface';
@@ -29,15 +29,21 @@ export class NewsComponent implements OnInit {
     )
   }
 
-  loadMore(){
+  loadMore(el: HTMLElement){
     this.limit+=7;
+    el.scrollIntoView({behavior:"smooth"});
+  }
+
+  formatDate(date){
+    const newDate = date.split(' ')[0].split('-');
+    return `${newDate[2]}/${newDate[1]}/${newDate[0]}`
   }
 
   getClass(i) { 
     if(i%10 == 0 || i%10 == 6){
-      return 'col-md-9';
+      return 'col-md-8';
     }
-    return 'col-md-3';
+    return 'col-md-4';
   }
 
 }
