@@ -18,6 +18,9 @@ export class NewsComponent implements OnInit {
     this.getNews();
   }
 
+  /*  
+  **** Load News Api *****
+  */
   getNews(){
     this.newsService.getNews().subscribe(
       (res: INewsRespone) => {
@@ -29,16 +32,29 @@ export class NewsComponent implements OnInit {
     )
   }
 
+  /*  
+  **** View more *****
+  **** adds 7 items every time *****
+  */
   loadMore(el: HTMLElement){
     this.limit+=7;
     el.scrollIntoView({behavior:"smooth"});
   }
 
+  /*  
+  **** Reformat date *****
+  **** for example: *****
+  **** from 2019-09-14 *****
+  **** to 14/09/2019 *****
+   */
   formatDate(date){
     const newDate = date.split(' ')[0].split('-');
     return `${newDate[2]}/${newDate[1]}/${newDate[0]}`
   }
 
+   /*  
+  **** add proper class based on index *****
+   */
   getClass(i) { 
     if(i%10 == 0 || i%10 == 6){
       return 'col-md-8';
