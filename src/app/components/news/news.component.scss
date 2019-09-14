@@ -38,8 +38,7 @@
     left:0;
     right:0;
     color:#fff;
-    // background-color:rgba(0, 0, 0, 0.3);
-    background: linear-gradient(to top,#000,transparent 100%);
+    background: linear-gradient(to top,#000,transparent 30%);
     overflow:hidden;
 }
 
@@ -56,9 +55,11 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         margin-bottom: 0;
+        font-size: 18px;
+
         &:last-of-type{
             color:#878785;
-            font-size: 15px;
+            font-size: 13px;
         }
    }
 }
