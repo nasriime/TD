@@ -48,8 +48,12 @@ export class NewsComponent implements OnInit {
   **** to 14/09/2019 *****
    */
   formatDate(date){
-    const newDate = date.split(' ')[0].split('-');
-    return `${newDate[2]}/${newDate[1]}/${newDate[0]}`
+    console.log(date);
+    if(date){
+      const newDate = date.split(' ')[0].split('-').reverse().join('/');
+      return newDate;
+    }
+    return '-'
   }
 
    /*  
